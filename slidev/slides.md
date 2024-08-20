@@ -511,3 +511,8 @@ Presenter: Ras (@ras0q [<ri-twitter-x-fill />](https://x.com/ras0q) [<ri-github-
 - [PDFKit | Apple Developer Documentation](https://developer.apple.com/documentation/pdfkit)
 - [What's new in PDFKit - WWDC22 - Videos - Apple Developer](https://developer.apple.com/videos/play/wwdc2022/10089/)
 - [iOSのPDFKitを利用してPDFを編集する | Zenn](https://zenn.dev/cookiezby/articles/38a7c23dd15706)
+
+<!-- TODO: improve CSS -->
+<footer class="absolute bottom-12 right-12">
+<div class="text-right block">This slide is powered by <a href="https://sli.dev">Slidev</a></div>
+</footer>
