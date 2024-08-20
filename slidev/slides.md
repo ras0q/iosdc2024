@@ -498,7 +498,7 @@ layout: end
 
 # ありがとうございました！
 
-サンプルレポジトリも是非ご覧ください！
+[サンプルレポジトリ](https://github.com/ras0q/iosdc2024) も是非ご覧ください！
 
 <img alt="repo qrcode" src="/qrcode.svg" width="150px" height="150px" class="mx-auto" />
 
