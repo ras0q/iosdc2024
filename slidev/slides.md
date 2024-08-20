@@ -1,14 +1,23 @@
 ---
 theme: default
 title: PencilKitで実装するPDFへの手書き注釈
-author: Ras (@ras0q)
-keywords: iOSDC,iOSDC2024
-download: true
+titleTemplate: "[iOSDC Japan 2024] %s"
 info: |
-  https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662
+  repo: https://github.com/ras0q/iosdc2024
+  slide: https://iosdc2024.ras0q.github.io
+  proposal: https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662
+author: Ras (@ras0q)
+keywords: iOSDC,iOSDC2024,iOSDC Japan 2024
+download: true
+exportFilename: iosdc2024-ras0q-pencilkit-pdf-annotation
+export:
+  format: pdf
+  withClicks: true
+  withToc: true
 highlighter: shiki
-drawings:
-  persist: false
+twoslash: false
+lineNumbers: true
+monaco: false
 mdc: true
 layout: cover
 ---
@@ -23,20 +32,24 @@ iOSDC Japan 2024 Day2 Track B
 
 ## Keynote
 
-- PencilKit の紹介・実装
-- Apple Pencil で PDF に注釈したい！
-- PencilKit の Good & More
+- PencilKitの紹介・実装
+- Apple PencilでPDFに注釈する
+- PencilKitの良かったところ・イマイチだったところ
 
 ## 注意事項
 
 - 紹介するコードは全体の実装の一部です
   - 詳細な実装はGitHubを参照ください → [ras0q/iosdc2024](https://github.com/ras0q/iosdc2024)
 
+<!-- 30s -->
+
 ---
 
 ## Ras
 
 [<ri-twitter-x-fill />](https://x.com/ras0q) [<ri-github-fill />](https://github.com/ras0q) @ras0q
+
+<!-- 10s -->
 
 ---
 layout: center
@@ -57,6 +70,9 @@ layout: center
 />
 
 <div class="text-right">引用元: WWDC19</div>
+
+<!-- iPadやiPhoneを持っている方ならこのような画面を見たことがあるのではないでしょうか
+これはファイルアプリでマークアップを行っている画面です -->
 
 ---
 
@@ -133,19 +149,36 @@ class ViewController: UIViewController {
 ```
 ````
 
+<!--
+ベーシックなVCを用意します
+
+PencilKitをimportし、PKCanvasViewを追加します、これでキャンバスが画面全体に広がりました
+
+描画ツールを使うにはPKToolPickerを使います
+toolPickerの監視対象にcanvasViewを追加し、canvasViewがfirst responderになったときにtoolPickerを表示するようにします
+-->
+
 ---
 
-## 完成！
+## ✅ PencilKitを使う
 
-<SlidevVideo autoplay autoreset="slide" class="w-3/5 h-auto mx-auto">
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-16">
   <source src="/pencilkit-in3min.mp4" type="video/mp4">
 </SlidevVideo>
+
+<!--
+完成しました!
+
+20行弱のコードでこのようなメモアプリを簡単に実装することができます
+-->
 
 ---
 layout: center
 ---
 
 # try! PDF Integration
+
+<!-- 次は、PDFにPencilKitを統合してみましょう! -->
 
 ---
 
@@ -170,6 +203,11 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+<!-- PDFを使うには同じく標準ライブラリのPDFKitを使います
+
+ドキュメントを読み込み、PDFViewに設定することでPDFをアプリ上に表示させることができるようになります
+ -->
 
 ---
 title: What's new in PDFKit (WWDC22)
@@ -313,6 +351,12 @@ class CanvasPDFView: PDFView {
 ```
 
 ---
+
+## ✅ PencilKitをPDFに統合する
+
+TODO: デモ動画
+
+---
 layout: center
 ---
 
@@ -359,7 +403,7 @@ layout: center
 
 `PDFView`への注釈は`PDFAnnotation`を使う
 
-`PKCanvasView`の描画は`canvasView.drawing: PKDrawing`から取得できる
+`PKCanvasView`上の描画は`PKDrawing`で表現される
 
 ```swift {*|7-10}
 class CanvasPDFAnnotation: PDFAnnotation {
@@ -404,8 +448,12 @@ pdfBounds.origin.y = page.bounds(for: .mediaBox).height - drawing.bounds.height 
 
 ## PKCanvasView → PDFView
 
-```swift {*|2-3|5-10|12-15|17-18}
+注釈の追加時に`PDFAnnotation#draw()`が呼ばれる
+
+```swift {*|7-12|14-17|19-20}
 class CanvasPDFAnnotation: PDFAnnotation {
+    // ...
+
     override func draw(with box: PDFDisplayBox, in context: CGContext) {
         super.draw(with: box, in: context)
 
@@ -431,10 +479,9 @@ class CanvasPDFAnnotation: PDFAnnotation {
 
 ## 使用例
 
-```swift
-guard let page = pdfView.currentPage, let canvasView = canvasView(for: page) else {
-    return
-}
+```swift {*|10-11}
+let page = pdfView.currentPage
+let canvasView = canvasView(for: page)
 
 // キャンバスへの描画を1つの注釈としているため更新時にリセットが必要
 let existingAnnotations = page.annotations.filter { $0 is CanvasPDFAnnotation }
@@ -475,6 +522,10 @@ layout: center
 
 ## PDFView → Raw PDF File
 
+`PDFDocument#dataRepresentation()`から`Data`を抽出
+
+ファイルURLを指定し書き込む
+
 ```swift
 let data = pdfDocument.dataRepresentation()
 let documentURL = pdfDocument.documentURL
@@ -483,14 +534,26 @@ try data.write(to: documentURL)
 ```
 
 ---
-layout: center
----
 
 ## ✅ 注釈を反映したPDFを保存する
 
+TODO: 保存機能を実装してデモを貼る
+
 ---
 
-TODO: 保存機能を実装してデモを貼る
+## PencilKit Good & More
+
+TODO
+
+よい
+
+- 自前で1から実装することなく簡単に使える
+
+イマイチ
+
+- PDFKitとの連携の問題
+  - PDFKitでコピペツール (rasso) が使えない
+  - 各ページに定規が出現する
 
 ---
 layout: end
