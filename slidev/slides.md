@@ -1,6 +1,9 @@
 ---
 theme: default
 title: PencilKitで実装するPDFへの手書き注釈
+author: Ras (@ras0q)
+keywords: iOSDC,iOSDC2024
+download: true
 info: |
   https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662
 highlighter: shiki
@@ -14,7 +17,7 @@ layout: cover
 
 iOSDC Japan 2024 Day2 Track B
 
-Ras (@ras0q)
+## Ras (@ras0q)
 
 ---
 
@@ -27,13 +30,13 @@ Ras (@ras0q)
 ## 注意事項
 
 - 紹介するコードは全体の実装の一部です
-  - 詳細な実装は [GitHub Repository] を参照ください
+  - 詳細な実装はGitHubを参照ください → [ras0q/iosdc2024](https://github.com/ras0q/iosdc2024)
 
 ---
 
 ## Ras
 
-X, GitHub: @ras0q
+[<ri-twitter-x-fill />](https://x.com/ras0q) [<ri-github-fill />](https://github.com/ras0q) @ras0q
 
 ---
 layout: center
@@ -498,8 +501,6 @@ layout: end
 サンプルレポジトリも是非ご覧ください！
 
 <img alt="repo qrcode" src="/qrcode.svg" width="150px" height="150px" class="mx-auto" />
-
-<!-- @ras0q <a href="https://x.com/ras0q"><ri-twitter-x-fill /></a> <a href="https://github.com/ras0q"><ri-github-fill /></a> -->
 
 Presenter: Ras (@ras0q [<ri-twitter-x-fill />](https://x.com/ras0q) [<ri-github-fill />](https://github.com/ras0q))
 
