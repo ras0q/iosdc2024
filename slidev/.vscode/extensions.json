@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "antfu.unocss",
+    "antfu.slidev",
+    "davidanson.vscode-markdownlint"
+  ]
+}

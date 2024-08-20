@@ -1,7 +1,10 @@
 {
   "markdownlint.config": {
-    "MD003": false,
-    "MD022": false,
-    "MD024": false
-  }
+    "heading-style": false,
+    "blanks-around-headings": false,
+    "no-duplicate-heading": false,
+    "single-h1": false,
+    "no-trailing-punctuation": false
+  },
+  "slidev.preview-sync": false
 }
