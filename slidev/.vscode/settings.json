@@ -6,5 +6,6 @@
     "single-h1": false,
     "no-trailing-punctuation": false
   },
-  "slidev.preview-sync": false
+  "slidev.preview-sync": false,
+  "unocss.autocomplete.matchType": "fuzzy",
 }
