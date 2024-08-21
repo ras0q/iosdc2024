@@ -3,13 +3,13 @@ theme: default
 title: PencilKitで実装するPDFへの手書き注釈
 titleTemplate: "[iOSDC Japan 2024] %s"
 info: |
-  repo: https://github.com/ras0q/iosdc2024
-  slide: https://iosdc2024.ras0q.github.io
-  proposal: https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662
+  - repo: <https://github.com/ras0q/iosdc2024>
+  - slide: <https://iosdc2024.ras0q.github.io>
+  - proposal: <https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662>
 author: Ras (@ras0q)
 keywords: iOSDC,iOSDC2024,iOSDC Japan 2024
-download: true
-exportFilename: iosdc2024-ras0q-pencilkit-pdf-annotation
+download: /iosdc2024-ras0q-pencilkit.pdf
+exportFilename: iosdc2024-ras0q-pencilkit
 export:
   format: pdf
   withClicks: true
@@ -342,7 +342,7 @@ backgroundSize: contain
 
 ## PDFPageOvelayViewProvider
 
-```swift
+```swift {*|4-10|13-}
 import PencilKit
 
 class ViewController: UIViewController {
@@ -353,9 +353,8 @@ class ViewController: UIViewController {
 
     // ページ番号をインデックスとしてcanvasViewsの要素を返す関数
     private func canvasView(for: page) -> PKCanvasView { ... }
-```
+}
 
-```swift
 extension ViewController: PDFPageOverlayViewProvider {
     func pdfView(_: PDFView, overlayViewFor page: PDFPage) -> UIView? {
         canvasView(for: page)
@@ -675,6 +674,8 @@ layout: end
 ---
 
 # ありがとうございました！
+
+<div/>
 
 [サンプルレポジトリ](https://github.com/ras0q/iosdc2024) も是非ご覧ください！
 
