@@ -15,10 +15,10 @@ class ViewController: UIViewController {
 
     private lazy var pdfDocument = PDFDocument(
         url: Bundle.main.url(forResource: "sample", withExtension: "pdf")!
-    )
+    )!
 
     // If you use pdfview.document, this line causes a circular reference.
-    private lazy var canvasViews: [PKCanvasView] = (0 ..< (pdfDocument?.pageCount ?? 1)).map { _ in
+    private lazy var canvasViews: [PKCanvasView] = (0 ..< pdfDocument.pageCount).map { _ in
         let view = PKCanvasView()
         view.backgroundColor = .clear
         view.clipsToBounds = true
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
     }
 
     private func saveAnnotationsToPDF() throws {
-        guard let data = pdfDocument?.dataRepresentation(), let documentURL = pdfDocument?.documentURL else {
+        guard let data = pdfDocument.dataRepresentation(), let documentURL = pdfDocument.documentURL else {
             return
         }
 
