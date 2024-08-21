@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:pencilkit-pdfkit-demo/pencilkit-pdfkit-demo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:pencilkit-demo/pencilkit-demo.xcodeproj">
+   </FileRef>
+</Workspace>
