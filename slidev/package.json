@@ -9,6 +9,7 @@
     "export": "slidev export --with-clicks --with-toc"
   },
   "dependencies": {
+    "@iconify-json/mdi": "^1.1.68",
     "@iconify-json/ri": "^1.1.22",
     "@slidev/cli": "0.49.24",
     "@slidev/theme-default": "latest",

@@ -16,7 +16,6 @@ export:
   withToc: true
 highlighter: shiki
 twoslash: false
-lineNumbers: true
 monaco: false
 mdc: true
 layout: cover
@@ -26,40 +25,76 @@ layout: cover
 
 iOSDC Japan 2024 Day2 Track B
 
-## Ras (@ras0q)
+<div class="absolute bottom-8">
+  Ras (@ras0q)
+</div>
 
 ---
 
-## Keynote
+# Keynote
 
-- PencilKitの紹介・実装
-- Apple PencilでPDFに注釈する
-- PencilKitの良かったところ・イマイチだったところ
+1. PencilKitとは？
+2. PencilKitでアプリを作る
+3. PencilKitをPDFに組み込む
+4. PencilKitのドローイングをPDF注釈として保存する
+5. PencilKitを使ってみた感想
 
-## 注意事項
+<div class="text-center my-8">
+  <div>↓↓サンプルレポジトリ↓↓</div>
+  <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
+</div>
 
-- 紹介するコードは全体の実装の一部です
-  - 詳細な実装はGitHubを参照ください → [ras0q/iosdc2024](https://github.com/ras0q/iosdc2024)
+<Comment>
+  <PoweredBySlidev />
+</Comment>
 
-<!-- 30s -->
+<!--
+30s
+-->
 
 ---
+layout: self-introduction
+---
 
-## Ras
+## 東京工業大学 大学院 修士1年
 
-[<ri-twitter-x-fill />](https://x.com/ras0q) [<ri-github-fill />](https://github.com/ras0q) @ras0q
+- 10月に大学が改名するらしい
+- デジタル創作同好会traP
+  - Web開発をメインに創作をしています
+  - <a href="https://portfolio.trap.jp">portfolio.trap.jp</a> をリリースしました
+
+## ピクシブ株式会社 アルバイト
+
+- iOSアプリエンジニア育成プロジェクト
+- pixiv / pixiv Sketch / Pastela
+- iOSDC Japan 参加(3) 登壇(2)
 
 <!-- 10s -->
 
 ---
-layout: center
+
+# Keynote
+
+1. <span class="bg-yellow-2">PencilKitとは</span>
+2. PencilKitでアプリを作る
+3. PencilKitをPDFに組み込む
+4. PencilKitのドローイングをPDF注釈として保存する
+5. PencilKitを使ってみた感想
+
+<div class="text-center my-8">
+  <div>↓↓サンプルレポジトリ↓↓</div>
+  <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
+</div>
+
+---
+layout: section
 ---
 
 # PencilKit?
 
 ---
 
-## PencilKit
+## PencilKit?
 
 <div/>
 
@@ -69,7 +104,7 @@ layout: center
   class="w-3/5 h-auto mx-auto"
 />
 
-<div class="text-right">引用元: WWDC19</div>
+<div class="text-sm text-right">引用元: WWDC19</div>
 
 <!-- iPadやiPhoneを持っている方ならこのような画面を見たことがあるのではないでしょうか
 これはファイルアプリでマークアップを行っている画面です -->
@@ -78,19 +113,42 @@ layout: center
 
 ## PencilKit
 
-<h3 class="text-center my-4"><strong>手書き認識をiOSアプリに組み込むことができる純正ライブラリ</strong></h3>
+<div class="text-center text-2xl font-semibold my-4">ドローイングをiOSアプリに組み込むことができる純正ライブラリ</div>
 
-- 絵・図形を描くための環境が簡単に揃う
-  - ペンの種類が豊富
-    - 鉛筆, 万年筆, クレヨン, 定規, ...
-  - ペンの設定ツールも標準で付属
-- 様々な純正アプリに組み込まれている
-  - メモ, 写真, ファイル, ...
-- PencilKitを使ったアプリ感で図形の連携ができる
-  - 移動, コピー＆ペースト, ...
+指やApple Pencilからの入力を受け取ってアプリで使う画像データに変換する
+
+<div class="mt-8 grid grid-cols-3 gap-8">
+  <div class="p-8 grid place-items-center text-center h-full aspect-ratio-square bg-blue-1 rounded-full">
+    <h3 class="font-semibold">描画ツール搭載</h3>
+    <div>鉛筆のほかに<br/>万年筆や定規も...</div>
+  </div>
+  <div class="p-8 grid place-items-center text-center h-full aspect-ratio-square bg-blue-1 rounded-full">
+    <h3 class="font-semibold">純正アプリにも</h3>
+    <div>ファイル, メモ, <br/>写真...</div>
+  </div>
+  <div class="p-8 grid place-items-center text-center h-full aspect-ratio-square bg-blue-1 rounded-full">
+    <h3 class="font-semibold">アプリ間の連携</h3>
+    <div>別アプリへ図形のコピペが可能</div>
+  </div>
+</div>
 
 ---
-layout: center
+
+# Keynote
+
+1. PencilKitとは？ ✅
+2. <span class="bg-yellow-2">PencilKitでアプリを作る</span>
+3. PencilKitをPDFに組み込む
+4. PencilKitのドローイングをPDF注釈として保存する
+5. PencilKitを使ってみた感想
+
+<div class="text-center my-8">
+  <div>↓↓サンプルレポジトリ↓↓</div>
+  <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
+</div>
+
+---
+layout: section
 ---
 
 # try! PencilKit
@@ -112,7 +170,7 @@ class ViewController: UIViewController {
 }
 ```
 
-```swift {*|1,5,10}
+```swift {1,5,10}
 import PencilKit
 import UIKit
 
@@ -127,7 +185,7 @@ class ViewController: UIViewController {
 }
 ```
 
-```swift {*|6,13-16}
+```swift {6,13-16|*}
 import PencilKit
 import UIKit
 
@@ -160,7 +218,7 @@ toolPickerの監視対象にcanvasViewを追加し、canvasViewがfirst responde
 
 ---
 
-## ✅ PencilKitを使う
+## ✅ PencilKitでアプリを作る
 
 <SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-16">
   <source src="/pencilkit-in3min.mp4" type="video/mp4">
@@ -173,7 +231,22 @@ toolPickerの監視対象にcanvasViewを追加し、canvasViewがfirst responde
 -->
 
 ---
-layout: center
+
+# Keynote
+
+1. PencilKitとは？ ✅
+2. PencilKitでアプリを作る ✅
+3. <span class="bg-yellow-2">PencilKitをPDFに組み込む</span>
+4. PencilKitのドローイングをPDF注釈として保存する
+5. PencilKitを使ってみた感想
+
+<div class="text-center my-8">
+  <div>↓↓サンプルレポジトリ↓↓</div>
+  <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
+</div>
+
+---
+layout: section
 ---
 
 # try! PDF Integration
@@ -182,16 +255,40 @@ layout: center
 
 ---
 
-# PDFKit
+## PDFKit
 
+````md magic-move
 ```swift
+import UIKit
+
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+```
+
+```swift {1,5}
+import PDFKit
+import UIKit
+
+class ViewController: UIViewController {
+    private lazy var pdfDocument = PDFDocument(somePDFURL)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+```
+
+```swift {6-10,15|*}
 import PDFKit
 import UIKit
 
 class ViewController: UIViewController {
     private lazy var pdfDocument = PDFDocument(somePDFURL)
     private lazy var pdfView: PDFView = {
-        let view = PDFView()
+        let view = PDFView(frame: view.frame)
         view.document = pdfDocument
         return view
     }()
@@ -203,11 +300,18 @@ class ViewController: UIViewController {
     }
 }
 ```
+````
 
 <!-- PDFを使うには同じく標準ライブラリのPDFKitを使います
 
 ドキュメントを読み込み、PDFViewに設定することでPDFをアプリ上に表示させることができるようになります
  -->
+
+---
+layout: center
+---
+
+## どうやってPencilKitを組み込む？
 
 ---
 title: What's new in PDFKit (WWDC22)
@@ -238,26 +342,20 @@ backgroundSize: contain
 
 ## PDFPageOvelayViewProvider
 
-```swift {*|1,8-17|1,20-24}
+```swift
 import PencilKit
-import PDFKit
-import UIKit
 
 class ViewController: UIViewController {
-    // ....
-
     // 各ページに対してCanvasViewを作成
-    private lazy var canvasViews: [PKCanvasView] = (0 ..< pdfDocument!.pageCount).map { _ in
-        let view = PKCanvasView()
-        view.backgroundColor = .clear
-        view.clipsToBounds = true
-        return view
+    private lazy var canvasViews = (0..<ページ数).map { _ in
+        PKCanvasView()
     }
 
     // ページ番号をインデックスとしてcanvasViewsの要素を返す関数
     private func canvasView(for: page) -> PKCanvasView { ... }
-}
+```
 
+```swift
 extension ViewController: PDFPageOverlayViewProvider {
     func pdfView(_: PDFView, overlayViewFor page: PDFPage) -> UIView? {
         canvasView(for: page)
@@ -267,29 +365,27 @@ extension ViewController: PDFPageOverlayViewProvider {
 
 ---
 
-## 手書き認識の設定
+## ドローイングの設定
 
-```swift {*|2,10-11|13-14|17-19}
-// in ViewController...
-private lazy var toolPicker = PKToolPicker()
+```swift {*|2,7|9-12|15-17}
+class ViewController: UIViewController {
+    private lazy var toolPicker = PKToolPicker()
 
-override func viewDidLoad() {
-    super.viewDidLoad()
+    override func viewDidLoad() {
+        // ...
+        for canvasView in canvasViews {
+            toolPicker.addObserver(canvasView)
 
-    view.addSubview(pdfView)
+            // キャンバスのドローイング用RecognizerをPDFViewに追加する
+            pdfView.addGestureRecognizer(
+              canvasView.drawingGestureRecognizer
+            )
+        }
 
-    for canvasView in canvasViews {
-        // 各キャンバスにツールを設定する
-        toolPicker.addObserver(canvasView)
-
-        // 各キャンバスの手書き認識をPDFViewに登録する
-        pdfView.addGestureRecognizer(canvasView.drawingGestureRecognizer)
+        // 今回のfirst responderはPDFView
+        toolPicker.setVisible(true, forFirstResponder: pdfView)
+        pdfView.becomeFirstResponder()
     }
-
-    // PKCanvasViewはoverlayしているだけなので、first responderはPDFViewになる
-    toolPicker.setVisible(true, forFirstResponder: pdfView)
-    pdfView.becomeFirstResponder()
-}
 ```
 
 ---
@@ -298,7 +394,9 @@ override func viewDidLoad() {
 
 <div/>
 
-どのページにも最後に追加した`drawingGestureRecognizer`のみが発火してしまう
+最後に追加したRecognizerしか発火しない
+
+`// TODO: もっといい方法がある？`
 
 <div class="h-4/5 flex items-center">
   <img
@@ -314,7 +412,9 @@ override func viewDidLoad() {
 
 <div/>
 
-タップ時に該当ページの`drawingGestureRecognizer`のみを適切に発火させる必要がある
+タップ時に該当ページのRecognizerのみを適切に発火させる必要がある
+
+`// TODO: SVGのindexが間違ってる`
 
 <div class="h-4/5 flex items-center">
   <img
@@ -326,57 +426,53 @@ override func viewDidLoad() {
 
 ---
 
-## override func hitTest()
+## Override `func hitTest(_:with:)`
 
 タップしたページのキャンバスの手書き認識のみ有効化
 
-```swift
-protocol CanvasPDFViewDelegate: AnyObject {
-    func switchActivePage(to page: PDFPage)
-}
-
+```swift {*|4|5,6}
 class CanvasPDFView: PDFView {
-    var interactionDelegate: (any CanvasPDFViewDelegate)?
+    let switchRecognizerHandler: (to: PDFPage) -> Void
 
-    // ✅
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    override func hitTest(_ point:CGPoint,with e:UIEvent?) -> UIView? {
+        // pointから該当ページを探すことができる
         if let activePage = page(for: point, nearest: true) {
-            // 移譲先でdrawingGestureRecognizer.isEnabled を切り替える
-            interactionDelegate?.switchActivePage(to: activePage)
+            switchRecognizerHandler(to: page)
         }
 
-        return super.hitTest(point, with: event)
+        return super.hitTest(point, with: e)
     }
 }
 ```
 
 ---
 
-## ✅ PencilKitをPDFに統合する
+## ✅ PencilKitをPDFに組み込む
 
-TODO: デモ動画
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-16">
+  <source src="/pencilkit-with-pdfkit.mp4" type="video/mp4">
+</SlidevVideo>
 
 ---
-layout: center
+
+# Keynote
+
+1. PencilKitとは？ ✅
+2. PencilKitでアプリを作る ✅
+3. PencilKitをPDFに組み込む ✅
+4. <span class="bg-yellow-2">PencilKitのドローイングをPDF注釈として保存する</span>
+5. PencilKitを使ってみた感想
+
+<div class="text-center my-8">
+  <div>↓↓サンプルレポジトリ↓↓</div>
+  <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
+</div>
+
+---
+layout: section
 ---
 
 # try! PDF Annotation
-
----
-
-## おさらい
-
-<br/>
-
-### 今できること
-
-- PencilKitを使ってキャンバス画面に図形を描画する
-- PDF上にキャンバスを重ねて各ページに図形を描画する
-
-### これから行うこと
-
-- 描画した図形を注釈としてPDFに反映させる
-- 注釈を反映したPDFを保存する
 
 ---
 
@@ -399,11 +495,7 @@ layout: center
 
 ---
 
-## PKCanvasView → PDFView
-
-`PDFView`への注釈は`PDFAnnotation`を使う
-
-`PKCanvasView`上の描画は`PKDrawing`で表現される
+## ドローイングを注釈として追加する
 
 ```swift {*|7-10}
 class CanvasPDFAnnotation: PDFAnnotation {
@@ -417,7 +509,7 @@ class CanvasPDFAnnotation: PDFAnnotation {
             - drawing.bounds.height
             - drawing.bounds.origin.y
 
-        super.init(bounds: pdfBounds, forType: .ink, withProperties: nil)
+        super.init(bounds: pdfBounds, forType: .ink)
 
         self.page = page
     }
@@ -428,33 +520,29 @@ class CanvasPDFAnnotation: PDFAnnotation {
 
 ---
 
-## 座標系の変換
+## PDF座標系への変換
 
-```swift
-pdfBounds.origin.y = page.bounds(for: .mediaBox).height - drawing.bounds.height - drawing.bounds.origin.y
-```
+座標系をy軸方向に反転させる必要がある
 
-<div class="h-3/4 flex items-center">
+図形が反転するわけではないことに注意
+
+<div class="h-4/5">
   <img
     alt="Coordinate differences between PDF and UIView"
-    src="/coordinates.png"
+    src="/coordinates.svg"
     class="w-auto h-full mx-auto"
   />
 </div>
 
-<div class="text-right">引用元: <a href="https://zenn.dev/cookiezby/articles/38a7c23dd15706">iOSのPDFKitを利用してPDFを編集する | Zenn</a></div>
-
 ---
 
-## PKCanvasView → PDFView
+## ドローイングを注釈として追加する
 
-注釈の追加時に`PDFAnnotation#draw()`が呼ばれる
+注釈の追加/更新時に`PDFAnnotation#draw()`が呼ばれる
 
-```swift {*|7-12|14-17|19-20}
+```swift {*|5-10|12-13}
 class CanvasPDFAnnotation: PDFAnnotation {
-    // ...
-
-    override func draw(with box: PDFDisplayBox, in context: CGContext) {
+    override func draw(with box: PDFDisplayBox,in context: CGContext) {
         super.draw(with: box, in: context)
 
         UIGraphicsPushContext(context)
@@ -464,40 +552,60 @@ class CanvasPDFAnnotation: PDFAnnotation {
             UIGraphicsPopContext()
         }
 
-        // Y-flip (M' = Scale * Translate * M)
-        let pageHeight = page!.bounds(for: box).height
-        context.translateBy(x: 0, y: pageHeight)
-        context.scaleBy(x: 1.0, y: -1.0)
-
         let image = drawing.image(from: drawing.bounds, scale: 1.0)
-        image.draw(in: drawing.bounds)
+        context.draw(image.cgImage!, in: bounds)
     }
 }
 ```
 
+<!--
+新しい注釈を追加したり、注釈の位置が変わったりするとPDFAnnotationのdrawメソッドが呼ばれます
+
+ドローイングを注釈として追加するために、drawメソッドをoverrideします
+
+まず、描画コンテキストをスタックに保存し、新しいコンテキストを設定します、メソッドの終了時にはコンテキストを抜ける処理も書いておきます
+
+次に、drawingを画像に変換します。drawingのboundsに合わせてキャプチャします。
+
+最後に、コンテキストに変換した画像を書き込みます。書き込むboundsはdrawingのものではなく、PDF用の座標系に変換したものを使うことに注意してください
+-->
+
 ---
 
-## 使用例
+## ドローイングを注釈として追加する
 
-```swift {*|10-11}
+```swift
 let page = pdfView.currentPage
 let canvasView = canvasView(for: page)
 
-// キャンバスへの描画を1つの注釈としているため更新時にリセットが必要
-let existingAnnotations = page.annotations.filter { $0 is CanvasPDFAnnotation }
-for annotation in existingAnnotations {
-    page.removeAnnotation(annotation)
-}
-
-let annotation = CanvasPDFAnnotation(drawing: canvasView.drawing, page: page)
+let annotation = CanvasPDFAnnotation(
+    drawing: canvasView.drawing,
+    page: page
+)
 page.addAnnotation(annotation)
 ```
 
----
-layout: center
----
+<br/>
 
-## ✅ 描画した図形を注釈としてPDFに反映させる
+```swift
+for stroke in canvasView.drawing.strokes {
+    let annotation = CanvasPDFAnnotation(
+        drawing: PKDrawing(strokes: [stroke]),
+        page: page
+    )
+    page.addAnnotation(annotation)
+}
+```
+
+<!--
+実際に注釈を追加するコードを書いてみます
+
+まず現在のページとページに対応するキャンバスを取得します
+
+今回の例では各ページのドローイングをまとめて1つの注釈としています
+
+PKDrawingにはひとつひとつの線をまとめて配列にしたstrokesというプロパティがあるので、注釈を分割したい場合はこれを使うのも検討してみてください
+-->
 
 ---
 
@@ -520,7 +628,7 @@ layout: center
 
 ---
 
-## PDFView → Raw PDF File
+## 注釈をファイルに保存する
 
 `PDFDocument#dataRepresentation()`から`Data`を抽出
 
@@ -535,25 +643,32 @@ try data.write(to: documentURL)
 
 ---
 
-## ✅ 注釈を反映したPDFを保存する
+## ✅ PencilKitのドローイングをPDF注釈として保存する
 
 TODO: 保存機能を実装してデモを貼る
 
 ---
 
-## PencilKit Good & More
+# Keynote
 
-TODO
+1. PencilKitとは？ ✅
+2. PencilKitでアプリを作る ✅
+3. PencilKitをPDFに組み込む ✅
+4. PencilKitのドローイングをPDF注釈として保存する ✅
+5. <span class="bg-yellow-2">PencilKitを使ってみた感想</span>
 
-よい
+<div class="text-center my-8">
+  <div>↓↓サンプルレポジトリ↓↓</div>
+  <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
+</div>
 
-- 自前で1から実装することなく簡単に使える
+---
 
-イマイチ
+## PencilKitを使ってみた感想
 
-- PDFKitとの連携の問題
-  - PDFKitでコピペツール (rasso) が使えない
-  - 各ページに定規が出現する
+- Apple Pencilとの連携を数行のコードで組み込めるのはありがたい
+- PDFKitとの連携が完全でない
+  - 投げ縄ツールが使えない
 
 ---
 layout: end
@@ -575,8 +690,3 @@ Presenter: Ras (@ras0q [<ri-twitter-x-fill />](https://x.com/ras0q) [<ri-github-
 - [PDFKit | Apple Developer Documentation](https://developer.apple.com/documentation/pdfkit)
 - [What's new in PDFKit - WWDC22 - Videos - Apple Developer](https://developer.apple.com/videos/play/wwdc2022/10089/)
 - [iOSのPDFKitを利用してPDFを編集する | Zenn](https://zenn.dev/cookiezby/articles/38a7c23dd15706)
-
-<!-- TODO: improve CSS -->
-<footer class="absolute bottom-12 right-12">
-<div class="text-right block">This slide is powered by <a href="https://sli.dev">Slidev</a></div>
-</footer>

@@ -1,0 +1,19 @@
+:root {
+  --slidev-code-padding: 0.5rem;
+  --slidev-code-font-size: 1.25rem; /* original is 0.75rem */
+  --slidev-code-line-height: 1.5rem;
+  --slidev-code-radius: 0.25rem;
+  --slidev-code-margin: 0.25rem 0;
+
+  /* workaround */
+  --prism-font-size: var(--slidev-code-font-size);
+  --prism-line-height: var(--slidev-code-line-height);
+}
+
+.slidev-layout {
+  font-size: 1.5rem;
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+}
