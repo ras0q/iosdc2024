@@ -6,7 +6,7 @@
     "build": "slidev build",
     "serve": "vite ./dist",
     "dev": "slidev --open",
-    "export": "slidev export --with-clicks --with-toc"
+    "export": "slidev export --output ./public/iosdc2024-ras0q-pencilkit.pdf"
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.1.68",
