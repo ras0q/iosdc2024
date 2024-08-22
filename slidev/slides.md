@@ -3,9 +3,11 @@ theme: default
 title: PencilKitで実装するPDFへの手書き注釈
 titleTemplate: "[iOSDC Japan 2024] %s"
 info: |
-  - repo: <https://github.com/ras0q/iosdc2024>
-  - slide: <https://iosdc2024.ras0q.github.io>
-  - proposal: <https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662>
+  このトークでは、PencilKitとPDFKitという2つのSwiftの標準ライブラリを使って、Apple Pencilを使ってPDFに注釈をするアプリの開発手順について解説します。
+
+  - Repository: <https://github.com/ras0q/iosdc2024>
+  - Slide: <https://ras0q.github.io/iosdc2024>
+  - Proposal: <https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662>
 author: Ras (@ras0q)
 keywords: iOSDC,iOSDC2024,iOSDC Japan 2024
 presenter: dev
