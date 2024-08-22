@@ -41,7 +41,7 @@ jobs:
         run: pnpm install --prod
         working-directory: "./slidev"
       - name: Build Slidev Pages
-        run: pnpm build
+        run: pnpm build --base /${{github.event.repository.name}}/
         working-directory: "./slidev"
       - name: Setup Pages
         uses: actions/configure-pages@v5
