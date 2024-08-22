@@ -31,10 +31,16 @@ iOSDC Japan 2024 Day2 Track B
 </div>
 
 ---
+layout: section
+---
 
-# PDF注釈がしたい！！！
+# PDFに注釈がしたい！
 
-- アプリの機能の一部として注釈機能がほしい
+---
+
+# PDFに注釈がしたい！！！
+
+- アプリの機能の1つとして注釈機能を組み込みたい
 - 世のPDFアプリが絶妙にハマらないため自作したい
   - 複雑すぎる操作UI
   - ファイルのアクセス制限
@@ -691,7 +697,7 @@ layout: end
 
 [サンプルレポジトリ](https://github.com/ras0q/iosdc2024) も是非ご覧ください！
 
-<img alt="repo qrcode" src="/qrcode.svg" width="150px" height="150px" class="mx-auto" />
+<QRCode value="https://github.com/ras0q/iosdc2024" width="150" height="150" class="mx-auto" />
 
 Presenter: Ras (@ras0q [<ri-twitter-x-fill />](https://x.com/ras0q) [<ri-github-fill />](https://github.com/ras0q))
 
