@@ -13,9 +13,9 @@ class ViewController: UIViewController {
         return view
     }()
 
-    private lazy var pdfDocument = PDFDocument(
-        url: Bundle.main.url(forResource: "sample", withExtension: "pdf")!
-    )!
+    private lazy var pdfDocument = PDFDocument(url: Bundle.main.url(forResource: "sample", withExtension: "pdf")!)! {
+        didSet { pdfView.document = pdfDocument }
+    }
 
     // If you use pdfview.document, this line causes a circular reference.
     private lazy var canvasViews: [PKCanvasView] = (0 ..< pdfDocument.pageCount).map { _ in
@@ -27,6 +27,14 @@ class ViewController: UIViewController {
 
     private lazy var toolPicker = PKToolPicker()
 
+    private lazy var documentPicker = {
+        let picker = UIDocumentPickerViewController(
+            forOpeningContentTypes: [.pdf]
+        )
+        picker.delegate = self
+        return picker
+    }()
+
     private lazy var menuButton: UIButton = {
         let button = UIButton(
             frame: CGRect(x: 48, y: 48, width: 64, height: 64)
@@ -35,6 +43,9 @@ class ViewController: UIViewController {
         button.showsMenuAsPrimaryAction = true
         button.menu = UIMenu(
             children: [
+                UIAction(title: "Select PDF") { _ in
+                    self.present(self.documentPicker, animated: true)
+                },
                 UIAction(title: "Show ToolPicker") { _ in
                     self.pdfView.becomeFirstResponder()
                 },
@@ -47,6 +58,7 @@ class ViewController: UIViewController {
                         try self.saveAnnotationsToPDF()
                         self.showResult(isSuccess: true)
                     } catch {
+                        print(error)
                         self.showResult(isSuccess: false)
                     }
                 },
@@ -119,6 +131,23 @@ class ViewController: UIViewController {
         }
 
         try data.write(to: documentURL)
+    }
+}
+
+extension ViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let fileURL = urls.first, fileURL.startAccessingSecurityScopedResource() else {
+            return
+        }
+
+        // stop access for previous document
+        pdfDocument.documentURL?.stopAccessingSecurityScopedResource()
+
+        guard let pdfDocument = PDFDocument(url: fileURL) else {
+            return
+        }
+
+        self.pdfDocument = pdfDocument
     }
 }
 
