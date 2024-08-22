@@ -233,8 +233,8 @@ toolPickerの監視対象にcanvasViewを追加し、canvasViewがfirst responde
 
 ## ✅ PencilKitでアプリを作る
 
-<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-16">
-  <source src="/pencilkit-in3min.mp4" type="video/mp4">
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-8">
+  <source src="/pencilkit-in1min.mp4" type="video/mp4">
 </SlidevVideo>
 
 <!--
@@ -402,13 +402,11 @@ class ViewController: UIViewController {
 
 ---
 
-## 複数の手書き認識を設定した結果...
+## 複数のRecognizerを設定した結果...
 
 <div/>
 
 最後に追加したRecognizerしか発火しない
-
-`// TODO: もっといい方法がある？`
 
 <div class="h-4/5 flex items-center">
   <img
@@ -420,13 +418,11 @@ class ViewController: UIViewController {
 
 ---
 
-## 複数の手書き認識を設定した結果...
+## 複数のRecognizerを設定した結果...
 
 <div/>
 
 タップ時に該当ページのRecognizerのみを適切に発火させる必要がある
-
-`// TODO: SVGのindexが間違ってる`
 
 <div class="h-4/5 flex items-center">
   <img
@@ -461,8 +457,8 @@ class CanvasPDFView: PDFView {
 
 ## ✅ PencilKitをPDFに組み込む
 
-<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-16">
-  <source src="/pencilkit-with-pdfkit.mp4" type="video/mp4">
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-8">
+  <source src="/with-pdfkit.mp4" type="video/mp4">
 </SlidevVideo>
 
 ---
@@ -657,7 +653,9 @@ try data.write(to: documentURL)
 
 ## ✅ PencilKitのドローイングをPDF注釈として保存する
 
-TODO: 保存機能を実装してデモを貼る
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-8">
+  <source src="/annotation-demo.mp4" type="video/mp4">
+</SlidevVideo>
 
 ---
 
