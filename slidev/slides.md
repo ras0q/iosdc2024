@@ -10,7 +10,6 @@ info: |
   - Proposal: <https://fortee.jp/iosdc-japan-2024/proposal/c39177cc-63a3-46f6-a3e4-5be077839662>
 author: Ras (@ras0q)
 keywords: iOSDC,iOSDC2024,iOSDC Japan 2024
-presenter: dev
 download: /iosdc2024-ras0q-pencilkit.pdf
 exportFilename: iosdc2024-ras0q-pencilkit
 export:
