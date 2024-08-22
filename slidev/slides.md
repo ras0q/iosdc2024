@@ -31,6 +31,19 @@ iOSDC Japan 2024 Day2 Track B
 
 ---
 
+# PDF注釈がしたい！！！
+
+- アプリの機能の一部として注釈機能がほしい
+- 世のPDFアプリが絶妙にハマらないため自作したい
+  - 複雑すぎる操作UI
+  - ファイルのアクセス制限
+  - 無限に現れる広告
+  - など...
+
+<div class="font-semibold text-center my-8">このトークを見ることでPDF注釈アプリがイチから作れるようになります!!!</div>
+
+---
+
 # Keynote
 
 1. PencilKitとは？
@@ -61,7 +74,7 @@ layout: self-introduction
 - 10月に大学が改名するらしい
 - デジタル創作同好会traP
   - Web開発をメインに創作をしています
-  - <a href="https://portfolio.trap.jp">portfolio.trap.jp</a> をリリースしました
+  - <a href="https://portfolio.trap.jp">traPortfolio</a> をリリースしました
 
 ## ピクシブ株式会社 アルバイト
 
