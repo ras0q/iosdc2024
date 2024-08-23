@@ -298,7 +298,7 @@ class ViewController: UIViewController {
 ## ✅ PencilKitでアプリを作る
 
 <SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-8">
-  <source src="/pencilkit-in1min.mp4" type="video/mp4">
+  <source src="/demo-pencilkit.mp4" type="video/mp4">
 </SlidevVideo>
 
 <!--
@@ -390,9 +390,15 @@ class ViewController: UIViewController {
   - ファイルのURLを指定してPDFDocumentクラスを作成する
 - PDFDocumentを元にPDFViewを作成する
   - これを画面に追加することで画面にPDFが現れる
-
-TODO: PDF出すだけのデモもほしい
 -->
+
+---
+
+## ✅ 画面にPDFを表示する
+
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-8">
+  <source src="/demo-pdfkit.mp4" type="video/mp4">
+</SlidevVideo>
 
 ---
 layout: center
@@ -521,21 +527,7 @@ class ViewController: UIViewController {
 }
 ```
 
-```swift {8-9}
-class ViewController: UIViewController {
-    private lazy var pdfView: PDFView = ...
-    private lazy var canvasViews = ...
-
-    override func viewDidLoad() {
-        // PDFViewの設定...
-
-        for canvasView in canvasViews {
-        }
-    }
-}
-```
-
-```swift {4,10,13-15}
+```swift {4,8-15}
 class ViewController: UIViewController {
     private lazy var pdfView: PDFView = ...
     private lazy var canvasViews = ...
@@ -589,10 +581,44 @@ class ViewController: UIViewController {
 
 ---
 
-## 完成？
+## ❓ PencilKitをPDFに組み込む (完成...？)
 
-<!-- TODO: デモを貼る -->
+最後のページにしか描画できない (動画は上のページにも描こうとしています)
 
+WARNING: "Drawing did change that is not in text."
+
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-4">
+  <source src="/demo-pdfkit-recognizer-bug.mp4" type="video/mp4">
+</SlidevVideo>
+
+---
+
+## ❓ PencilKitをPDFに組み込む (完成...？)
+
+最後のページにしか描画できない (動画は上のページにも描こうとしています)
+
+WARNING: "Drawing did change that is not in text."
+
+<div class="grid grid-cols-[40%_1fr]">
+
+<SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto mt-4">
+  <source src="/demo-pdfkit-recognizer-bug.mp4" type="video/mp4">
+</SlidevVideo>
+
+<div class="mt-4">
+
+- Recognizerの認識対象はPDFView全体
+  - 各キャンバスの対象ページ以外も認識する
+- 常に最後に追加されたRecognizerが発火する
+
+</div>
+
+</div>
+
+<div v-click class="text-center font-semibold">→ 都度発火させるRecognizerを切り替える必要がある</div>
+
+---
+hide: true
 ---
 
 ## 複数のRecognizerを設定した結果...
@@ -609,6 +635,8 @@ class ViewController: UIViewController {
   />
 </div>
 
+---
+hide: true
 ---
 
 ## 複数のRecognizerを設定した結果...
@@ -725,7 +753,7 @@ extension ViewController: CanvasPDFViewDelegate {
 ## ✅ PencilKitをPDFに組み込む
 
 <SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-8">
-  <source src="/with-pdfkit.mp4" type="video/mp4">
+  <source src="/demo-pencilkit-pdfkit.mp4" type="video/mp4">
 </SlidevVideo>
 
 ---
@@ -949,7 +977,7 @@ try data.write(to: documentURL)
 ## ✅ PencilKitのドローイングをPDF注釈として保存する
 
 <SlidevVideo autoplay autoreset="slide" class="w-auto h-4/5 mx-auto my-8">
-  <source src="/annotation-demo.mp4" type="video/mp4">
+  <source src="/demo-pdfkit-annotation.mp4" type="video/mp4">
 </SlidevVideo>
 
 ---
