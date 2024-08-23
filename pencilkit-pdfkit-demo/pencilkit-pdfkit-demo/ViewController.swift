@@ -199,7 +199,7 @@ class CanvasPDFAnnotation: PDFAnnotation {
         // from the UIView coordinate system (origin at the top-left)
         // to the PDF coordinate system (origin at the bottom-left)
         var pdfBounds = drawing.bounds
-        pdfBounds.origin.y = page.bounds(for: .mediaBox).height - pdfBounds.origin.y - pdfBounds.height
+        pdfBounds.origin.y = page.bounds(for: .mediaBox).height - pdfBounds.origin.y
         super.init(bounds: pdfBounds, forType: .ink, withProperties: nil)
 
         self.page = page
