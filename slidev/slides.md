@@ -686,7 +686,7 @@ class ViewController: UIViewController {
 }
 ```
 
-```swift {2}
+```swift
 class ViewController: UIViewController {
     private lazy var pdfView: CanvasPDFView = {
         let view = PDFView(frame: view.frame)
@@ -801,6 +801,8 @@ class CanvasPDFAnnotation: PDFAnnotation {
 
 図形が反転するわけではないことに注意
 
+// TODO: ココ座標変わってね？
+
 <div class="h-4/5">
   <img
     alt="Coordinate differences between PDF and UIView"
@@ -838,7 +840,6 @@ class CanvasPDFAnnotation: PDFAnnotation {
     }
 }
 ```
-````
 
 ```swift {12-13|*}
 class CanvasPDFAnnotation: PDFAnnotation {
@@ -857,6 +858,7 @@ class CanvasPDFAnnotation: PDFAnnotation {
     }
 }
 ```
+````
 
 <!--
 新しい注釈を追加したり、注釈の位置が変わったりするとPDFAnnotationのdrawメソッドが呼ばれます
@@ -972,6 +974,8 @@ try data.write(to: documentURL)
 - Apple Pencilとの連携を数行のコードで組み込めるのはありがたい
 - PDFKitとの連携が完全でない
   - 投げ縄ツールが使えない
+
+// TODO: 詳しく
 
 ---
 layout: end
