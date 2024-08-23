@@ -31,11 +31,19 @@ iOSDC Japan 2024 Day2 Track B
   Ras (@ras0q)
 </div>
 
+<!--
+タイトル
+-->
+
 ---
 layout: section
 ---
 
 # PDFに注釈がしたい！
+
+<!--
+PDFに注釈がしたい！
+-->
 
 ---
 
@@ -49,6 +57,12 @@ layout: section
   - など...
 
 <div class="font-semibold text-center my-8">このトークを見ることでPDF注釈アプリがイチから作れるようになります!!!</div>
+
+<!--
+機能の例: 署名
+
+TODO: この時点ではPDFに限らなくていいのでは？
+-->
 
 ---
 
@@ -70,7 +84,9 @@ layout: section
 </Comment>
 
 <!--
-30s
+- キーノート、2と3でちょっと話が変わるよ
+- 登場するコードは適宜省略しているので詳しく知りたかったらGitHubの完全版を見てね
+- 右上にスライドのQRコードがあるよ
 -->
 
 ---
@@ -90,7 +106,18 @@ layout: self-introduction
 - pixiv / pixiv Sketch / Pastela
 - iOSDC Japan 参加(3) 登壇(2)
 
-<!-- 10s -->
+<!--
+- Ras (らす)
+- Swiftの他にGoやTSを書く
+- 東工大の修士1年
+  - traPというサークルで活動している
+  - 普段はモバイルアプリよりもWeb開発をしている
+- ピクシブ株式会社で2,3年バイトしている
+- iOSアプリエンジニア育成プロジェクトというプロジェクトに半年ほど参加した
+  - 0からiOSアプリの開発手法を学んだ
+  - pixiv insideに記事が上がっているので探して読んでね
+- 社員の方々にもアドバイスを貰ってiOSDC3回中2回登壇できた
+-->
 
 ---
 
@@ -107,11 +134,19 @@ layout: self-introduction
   <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
 </div>
 
+<!--
+- まずはPencilKitの紹介をします
+-->
+
 ---
 layout: section
 ---
 
 # PencilKit?
+
+<!--
+- PencilKitを使ったことがある人〜〜〜〜？
+-->
 
 ---
 
@@ -127,8 +162,10 @@ layout: section
 
 <div class="text-sm text-right">引用元: WWDC19</div>
 
-<!-- iPadやiPhoneを持っている方ならこのような画面を見たことがあるのではないでしょうか
-これはファイルアプリでマークアップを行っている画面です -->
+<!--
+- ファイルアプリでマークアップを行っている画面
+- 下の方にツールが置かれている
+-->
 
 ---
 
@@ -153,6 +190,13 @@ layout: section
   </div>
 </div>
 
+<!--
+- PencilKitは指やApple Pencilによるドローイングを画像としてアプリに組み込むことを可能にするSwiftの純正ライブラリ
+- さっき見た描画ツールが使える
+- ファイル以外にもメモや写真などで使われている
+- PencilKitを使ったアプリ間で図形のコピペや移動といった連携ができる
+-->
+
 ---
 
 # Keynote
@@ -168,6 +212,10 @@ layout: section
   <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
 </div>
 
+<!--
+- 紹介が終わったところでPencilKitを実際に使ってみる
+-->
+
 ---
 layout: section
 ---
@@ -175,6 +223,10 @@ layout: section
 # try! PencilKit
 
 in 1 minute
+
+<!--
+- 1分で実装するからこっち見て〜〜〜〜〜〜〜〜〜
+-->
 
 ---
 
@@ -229,12 +281,16 @@ class ViewController: UIViewController {
 ````
 
 <!--
-ベーシックなVCを用意します
-
-PencilKitをimportし、PKCanvasViewを追加します、これでキャンバスが画面全体に広がりました
-
-描画ツールを使うにはPKToolPickerを使います
-toolPickerの監視対象にcanvasViewを追加し、canvasViewがfirst responderになったときにtoolPickerを表示するようにします
+- UIKitで説明する
+  - SwiftUIが使いたい場合はUIViewRepresentableを使ってね
+- 基本のViewController
+- PencilKitをimport、PKCanvasViewというViewを画面に追加する
+  - 画面全体にキャンバスが広がる
+- さっき紹介したツールキットはPKToolPickerとして提供されている
+  - まず作ったcanvasViewを監視対象にする
+  - canvasViewがFirstResponderになったときにツールを表示するようにする
+    - FR: イベントを検知したときに一番最初に処理をするオブジェクト
+  - 設定をしたのでcanvasViewをFRにして完成
 -->
 
 ---
@@ -246,9 +302,8 @@ toolPickerの監視対象にcanvasViewを追加し、canvasViewがfirst responde
 </SlidevVideo>
 
 <!--
-完成しました!
-
-20行弱のコードでこのようなメモアプリを簡単に実装することができます
+- 完成！
+- 20行弱のコードでお絵かきアプリを作ることができる
 -->
 
 ---
@@ -266,13 +321,19 @@ toolPickerの監視対象にcanvasViewを追加し、canvasViewがfirst responde
   <a href="https://github.com/ras0q/iosdc2024" class="font-bold">github.com/ras0q/iosdc2024</a>
 </div>
 
+<!--
+- 話題が変わるので脳みそシャッフルタイム
+-->
+
 ---
 layout: section
 ---
 
 # try! PDF Integration
 
-<!-- 次は、PDFにPencilKitを統合してみましょう! -->
+<!--
+- PDF上でPencilKitを使ってみます
+-->
 
 ---
 
@@ -323,10 +384,15 @@ class ViewController: UIViewController {
 ```
 ````
 
-<!-- PDFを使うには同じく標準ライブラリのPDFKitを使います
+<!--
+- 先ほどと同じく基本のViewController
+- PDFを扱うためのパッケージであるPDFKitをimportする
+  - ファイルのURLを指定してPDFDocumentクラスを作成する
+- PDFDocumentを元にPDFViewを作成する
+  - これを画面に追加することで画面にPDFが現れる
 
-ドキュメントを読み込み、PDFViewに設定することでPDFをアプリ上に表示させることができるようになります
- -->
+TODO: PDF出すだけのデモもほしい
+-->
 
 ---
 layout: center
@@ -334,11 +400,19 @@ layout: center
 
 ## どうやってPencilKitを組み込む？
 
+<!--
+- PencilKitを組み込む解決策は次のページに！
+-->
+
 ---
 title: What's new in PDFKit (WWDC22)
 layout: image
 image: /pdfkit-wwdc22-1.png
 ---
+
+<!--
+WWDC 2022でPDFKitに新たな機能が追加された
+-->
 
 ---
 title: How can I draw on PDF pages using PencilKit?
@@ -346,11 +420,20 @@ layout: image
 image: /pdfkit-wwdc22-2.png
 ---
 
+<!--
+- PDF EngineerのConrad Carlen
+- PencilKitでPDFのページに書き込みを行うには？
+-->
+
 ---
 title: the answer is to use an overlay view.
 layout: image
 image: /pdfkit-wwdc22-3.png
 ---
+
+<!--
+- 解決策はOverlay view使うことだ
+-->
 
 ---
 title: PDFPageOvelayViewProvider
@@ -359,54 +442,156 @@ image: /pdfkit-wwdc22-4.png
 backgroundSize: contain
 ---
 
+<!--
+- PDFの上にViewを被せることを目的として、iOS16からPDFPageOverlayViewProviderが登場
+-->
+
 ---
 
-## PDFPageOvelayViewProvider
+## PDFPageOverlayViewProvider
 
-```swift {*|4-10|13-}
-import PencilKit
-
+````md magic-move
+```swift
 class ViewController: UIViewController {
-    // 各ページに対してCanvasViewを作成
-    private lazy var canvasViews = (0..<ページ数).map { _ in
-        PKCanvasView()
-    }
+    private lazy var pdfView: PDFView = {
+        let view = PDFView(frame: view.frame)
+        view.document = pdfDocument
+        return view
+    }()
+}
+```
 
-    // ページ番号をインデックスとしてcanvasViewsの要素を返す関数
-    private func canvasView(for: page) -> PKCanvasView { ... }
+```swift {5,10-13}
+class ViewController: UIViewController {
+    private lazy var pdfView: PDFView = {
+        let view = PDFView(frame: view.frame)
+        view.document = pdfDocument
+        view.pageOverlayViewProvider = self
+        return view
+    }()
 }
 
 extension ViewController: PDFPageOverlayViewProvider {
     func pdfView(_: PDFView, overlayViewFor page: PDFPage) -> UIView? {
-        canvasView(for: page)
     }
 }
 ```
 
+```swift {8-11,16-17|*}
+class ViewController: UIViewController {
+    private lazy var pdfView: PDFView = {
+        let view = PDFView(frame: view.frame)
+        view.document = pdfDocument
+        view.pageOverlayViewProvider = self
+        return view
+    }()
+    // 各ページに被せるキャンバスを作成
+    private lazy var canvasViews = (0..<ページ数).map { _ in
+        PKCanvasView()
+    }
+}
+
+extension ViewController: PDFPageOverlayViewProvider {
+    func pdfView(_: PDFView, overlayViewFor page: PDFPage) -> UIView? {
+        // ページ数に対応するキャンバスを返す
+        canvasViews[page.ページ番号]
+    }
+}
+```
+````
+
+<!--
+- ページ数分のPKCanvasViewを用意
+- PDFPageOverlayViewProviderのpdfViewメソッドで各ページのCanvasを返すようにする
+-->
+
 ---
 
-## ドローイングの設定
+## 描画ツールも設定する
 
-```swift {*|2,7|9-12|15-17}
+````md magic-move
+```swift
 class ViewController: UIViewController {
+    private lazy var pdfView: PDFView = ...
+    private lazy var canvasViews = ...
+
+    override func viewDidLoad() {
+        // PDFViewの設定...
+    }
+}
+```
+
+```swift {8-9}
+class ViewController: UIViewController {
+    private lazy var pdfView: PDFView = ...
+    private lazy var canvasViews = ...
+
+    override func viewDidLoad() {
+        // PDFViewの設定...
+
+        for canvasView in canvasViews {
+        }
+    }
+}
+```
+
+```swift {4,10,13-15}
+class ViewController: UIViewController {
+    private lazy var pdfView: PDFView = ...
+    private lazy var canvasViews = ...
     private lazy var toolPicker = PKToolPicker()
 
     override func viewDidLoad() {
-        // ...
-        for canvasView in canvasViews {
-            toolPicker.addObserver(canvasView)
+        // PDFViewの設定...
 
-            // キャンバスのドローイング用RecognizerをPDFViewに追加する
-            pdfView.addGestureRecognizer(
-              canvasView.drawingGestureRecognizer
-            )
+        for canvasView in canvasViews {
+          toolPicker.addObserver(canvasView)
         }
 
         // 今回のfirst responderはPDFView
         toolPicker.setVisible(true, forFirstResponder: pdfView)
         pdfView.becomeFirstResponder()
     }
+}
 ```
+
+```swift {11|*}
+class ViewController: UIViewController {
+    private lazy var pdfView: PDFView = ...
+    private lazy var canvasViews = ...
+    private lazy var toolPicker = PKToolPicker()
+
+    override func viewDidLoad() {
+        // PDFViewの設定...
+
+        for canvasView in canvasViews {
+          toolPicker.addObserver(canvasView)
+          pdfView.addGestureRecognizer(canvasView.drawingGestureRecognizer)
+        }
+
+        // 今回のfirst responderはPDFView
+        toolPicker.setVisible(true, forFirstResponder: pdfView)
+        pdfView.becomeFirstResponder()
+    }
+}
+```
+````
+
+<!--
+- 描画ツールも設定する
+- 今の続きから
+- 各キャンバスに対して繰り返し処理を行う
+- PKToolPickerを使う
+  - キャンバスを監視対象にする
+  - PDFViewがFRになったときにツールを表示するようにする
+- 最後にキャンバスのドローイング認識をPDFViewに追加する
+-->
+
+---
+
+## 完成？
+
+<!-- TODO: デモを貼る -->
 
 ---
 
@@ -444,22 +629,96 @@ class ViewController: UIViewController {
 
 ## Override `func hitTest(_:with:)`
 
-タップしたページのキャンバスの手書き認識のみ有効化
+タップしたページのキャンバスのRecognizerのみを有効化させる
 
-```swift {*|4|5,6}
+````md magic-move
+```swift
 class CanvasPDFView: PDFView {
-    let switchRecognizerHandler: (to: PDFPage) -> Void
-
     override func hitTest(_ point:CGPoint,with e:UIEvent?) -> UIView? {
-        // pointから該当ページを探すことができる
+        return super.hitTest(point, with: e)
+    }
+}
+```
+
+```swift {3-4}
+class CanvasPDFView: PDFView {
+    override func hitTest(_ point:CGPoint,with e:UIEvent?) -> UIView? {
         if let activePage = page(for: point, nearest: true) {
-            switchRecognizerHandler(to: page)
         }
 
         return super.hitTest(point, with: e)
     }
 }
 ```
+
+```swift {1-3,6,10}
+protocol CanvasPDFViewDelegate: AnyObject {
+    func switchActivePage(to page: PDFPage)
+}
+
+class CanvasPDFView: PDFView {
+    var interactionDelegate: (any CanvasPDFViewDelegate)?
+
+    override func hitTest(_ point:CGPoint,with e:UIEvent?) -> UIView? {
+        if let activePage = page(for: point, nearest: true) {
+            interactionDelegate?.switchActivePage(to: activePage)
+        }
+
+        return super.hitTest(point, with: e)
+    }
+}
+```
+````
+
+---
+
+## ViewController側でRecognizerを切り替える
+
+````md magic-move
+```swift
+class ViewController: UIViewController {
+    private lazy var pdfView: PDFView = {
+        let view = PDFView(frame: view.frame)
+        view.document = pdfDocument
+        view.pageOverlayViewProvider = self
+        return view
+    }()
+}
+```
+
+```swift {2}
+class ViewController: UIViewController {
+    private lazy var pdfView: CanvasPDFView = {
+        let view = PDFView(frame: view.frame)
+        view.document = pdfDocument
+        view.pageOverlayViewProvider = self
+        return view
+    }()
+}
+```
+
+```swift {6,11-}
+class ViewController: UIViewController {
+    private lazy var pdfView: CanvasPDFView = {
+        let view = PDFView(frame: view.frame)
+        view.document = pdfDocument
+        view.pageOverlayViewProvider = self
+        view.interactionDelegate = self
+        return view
+    }()
+}
+
+extension ViewController: CanvasPDFViewDelegate {
+    func switchActivePage(to page: PDFPage) {
+        let activeCanvasView = canvasView[page.ページ番号]
+        for canvasView in canvasViews {
+            let isActiveView = (canvasView == activeCanvasView)
+            canvasView.drawingGestureRecognizer.isEnabled = isActiveView
+        }
+    }
+}
+```
+````
 
 ---
 
@@ -556,7 +815,32 @@ class CanvasPDFAnnotation: PDFAnnotation {
 
 注釈の追加/更新時に`PDFAnnotation#draw()`が呼ばれる
 
-```swift {*|5-10|12-13}
+````md magic-move
+```swift
+class CanvasPDFAnnotation: PDFAnnotation {
+    override func draw(with box: PDFDisplayBox,in context: CGContext) {
+        super.draw(with: box, in: context)
+    }
+}
+```
+
+```swift {5-10}
+class CanvasPDFAnnotation: PDFAnnotation {
+    override func draw(with box: PDFDisplayBox,in context: CGContext) {
+        super.draw(with: box, in: context)
+
+        UIGraphicsPushContext(context)
+        context.saveGState()
+        defer {
+            context.restoreGState()
+            UIGraphicsPopContext()
+        }
+    }
+}
+```
+````
+
+```swift {12-13|*}
 class CanvasPDFAnnotation: PDFAnnotation {
     override func draw(with box: PDFDisplayBox,in context: CGContext) {
         super.draw(with: box, in: context)
@@ -618,9 +902,10 @@ for stroke in canvasView.drawing.strokes {
 
 まず現在のページとページに対応するキャンバスを取得します
 
-今回の例では各ページのドローイングをまとめて1つの注釈としています
+上の例では、各ページのドローイングをまとめて1つの注釈としています
 
-PKDrawingにはひとつひとつの線をまとめて配列にしたstrokesというプロパティがあるので、注釈を分割したい場合はこれを使うのも検討してみてください
+下の例では、PKDrawingにはひとつひとつの線をまとめて配列にしたstrokesというプロパティを使っています
+注釈を分割したい場合はこれを使うのも検討してみてください
 -->
 
 ---
