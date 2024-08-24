@@ -102,7 +102,8 @@ layout: self-introduction
 
 - iOSアプリエンジニア育成プロジェクト
 - pixiv / pixiv Sketch / Pastela
-- iOSDC Japan 参加(3) 登壇(2)
+
+## iOSDC Japan 参加(3) 登壇(2)
 
 <!--
 **~3:30**
@@ -507,7 +508,7 @@ class ViewController: UIViewController {
 
 extension ViewController: PDFPageOverlayViewProvider {
     func pdfView(_: PDFView, overlayViewFor page: PDFPage) -> UIView? {
-        // ページ数に対応するキャンバスを返す
+        // ページ番号に対応するキャンバスを返す
         canvasViews[page.ページ番号]
     }
 }
@@ -591,7 +592,7 @@ class ViewController: UIViewController {
 
 ---
 
-## ❓ PDFに (完成...？)
+## ❓ PDFに描画する (完成...？)
 
 最後のページにしか描画できない (動画は上のページにも描こうとしています)
 
@@ -1101,13 +1102,14 @@ try data.write(to: documentURL)
 
 - 自作だと大変なところを公式で提供してくれているのはありがたい
   - 数行のコードで低遅延の描画認識を描くことができる
-  - 感度認識など
-- PencilKitをViewの一部として加える場面では問題なく使えそう
-- 一方PDFKit (`PDFPageOvelayViewProvider`) との連携が難しい
+  - 感度認識によるペンの太さを変えることができる
+- 通常の利用ではPencilKitは問題なく使えそう
+- 一方PDFKit (`PDFPageOvelayViewProvider`) との連携が怪しい
   - 投げ縄ツールが現状使えない
   - 定規が全ページに出現する
     - toolPickerをページ数分用意したら治るかも...？
     - そうするとツールの同期ができなくなるのでは...？
+- (Apple Pencilを使ったデバッグにiPad実機が必要で大変)
 
 </div>
 
@@ -1125,7 +1127,7 @@ try data.write(to: documentURL)
 layout: end
 ---
 
-# ありがとうございました！
+# ご清聴ありがとうございました！
 
 <div/>
 
