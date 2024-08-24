@@ -16,6 +16,7 @@ export:
   format: pdf
   withClicks: true
   withToc: true
+presenter: dev
 highlighter: shiki
 twoslash: false
 monaco: false
