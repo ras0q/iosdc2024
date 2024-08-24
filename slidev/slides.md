@@ -44,13 +44,17 @@ layout: section
 - アプリの機能の1つとして手書きの描画機能を実装したい
   - お絵かき
   - 手書きメモ
-- 世の中のPDF注釈アプリがハマらないため自作したい
+- 世の中のPDF注釈アプリが需要にマッチしないため自作したい
   - 複雑すぎる操作UI
   - ファイルのアクセス制限
   - 無限に現れる広告
   - など...
 
 <div class="font-semibold text-center my-8">このトークを見ることでApple Pencilを一層活用できるようになります！！！</div>
+
+<!--
+**~1:10 くらい**
+-->
 
 ---
 
@@ -72,13 +76,15 @@ layout: section
 </Comment>
 
 <!--
+**~ 2:30**
+
 - PencilKitの紹介
 - PencilKitの実装
 - 3から本題、PDFに手書きの描画を実装する
 - 描画をPDF注釈として反映し、保存する
 
 - 本トークで登場するコードは適宜省略しているのでGitHubを見てね
-- 右上にスライドのQRコードがあるよ
+- 右上にスライドへのQRコードがあるよ
 -->
 
 ---
@@ -99,6 +105,8 @@ layout: self-introduction
 - iOSDC Japan 参加(3) 登壇(2)
 
 <!--
+**~3:30**
+
 - Ras (らす)
 - Swiftの他にGoやTSを書く
 - 東工大の修士1年
@@ -184,7 +192,9 @@ layout: section
 </div>
 
 <!--
-- PencilKitは指やApple Pencilによるドローイングを画像としてアプリに組み込むことを可能にするSwiftの純正ライブラリ
+**~5:00**
+
+- PencilKitは指やApple Pencilによるドローイングを画像としてアプリに組み込むことを可能にするApple標準ライブラリ
 - さっき見た描画ツールが使える
 - ファイル以外にもメモや写真などで使われている
 - 投げ縄ツールなどを使うことで、PencilKitを使ったアプリ間で図形のコピペや移動といった連携ができる
@@ -274,6 +284,8 @@ class ViewController: UIViewController {
 ````
 
 <!--
+**~6:00**
+
 - UIKitで説明する
   - SwiftUIが使いたい場合はUIViewRepresentableを使ってね
 - 基本のViewController
@@ -315,6 +327,7 @@ class ViewController: UIViewController {
 </div>
 
 <!--
+- ここからはタイトルにもある通りPencilKitを使ってPDFに描画していく
 - 話題が変わるので脳みそリセットタイム
 -->
 
@@ -566,6 +579,8 @@ class ViewController: UIViewController {
 ````
 
 <!--
+**~10:00**
+
 - 描画ツールも設定する
 - 今の続きから
 - PKToolPickerのインスタンスを生成する
@@ -611,7 +626,7 @@ WARNING: "Drawing did change that is not in text."
 
 1. Recognizerの認識範囲はPDFView全体
 2. 複数追加されたRecognizerの範囲が重複する
-3. 最後に追加されたRecognizerが優先的に発火する
+3. 最後に追加されたRecognizerのみが発火する
 
 → 最後のページしか正常に認識されない😭
 
@@ -622,12 +637,14 @@ WARNING: "Drawing did change that is not in text."
 <div v-click class="text-center font-semibold">→ 描画ごとに発火させるRecognizerを切り替える必要がある</div>
 
 <!--
+**~11:00**
+
 - 原因は有効になっているRecognizerが複数存在していること
 - PDFViewに対してRecognizerを追加したため、認識範囲はPDFView全体 (全ページ) に渡っている
 - Recognizerが複数追加されたことで認識範囲が重複している
-- 最後に追加されたRecognizerが優先的に発火する
-- 最後のページにしか正常に認識されず描画されない
-- 対策として、ドローイングごとに有効なRecognizerを切り替えて、1つのみが動くようにする
+- 最後に追加されたRecognizerのみが発火する
+- 最後のページでしか正しいRecognizerが正常に認識されず描画されない
+- 対策として、タップごとに有効なRecognizerを切り替えて、1つのみが動くようにする
 -->
 
 ---
@@ -746,6 +763,8 @@ extension ViewController: CanvasPDFViewDelegate {
 </SlidevVideo>
 
 <!--
+**~13:00**
+
 - 無事PencilKitを使ってPDFに描画することができるように
 -->
 
@@ -869,7 +888,7 @@ class CanvasPDFAnnotation: PDFAnnotation {
 
 ## 再掲: 注釈用クラスのイニシャライザ
 
-```swift
+```swift {7-10}
 class CanvasPDFAnnotation: PDFAnnotation {
     private let drawing: PKDrawing
 
@@ -1051,6 +1070,8 @@ try data.write(to: documentURL)
 </SlidevVideo>
 
 <!--
+**~ 18:30**
+
 - キャンバスの描画をPDF注釈として追加する
 - 保存するとファイルアプリ上でも反映されている
 -->
